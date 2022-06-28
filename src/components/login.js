@@ -17,6 +17,7 @@ const Login = ({ addToken }) => {
         axios.post("http://127.0.0.1:8000/api/loginkorisnik", data).then((res) => {
             console.log(res.data);
             window.sessionStorage.setItem("auth_token", res.data.token);
+            window.sessionStorage.setItem("ulogovan","user");
             addToken(res.data.token);
             console.log(window.sessionStorage.auth_token);
             console.log("break");

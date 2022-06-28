@@ -35,9 +35,8 @@ const DodavanjeAgenta = () => {
             <input type="text" required name="JMBG" onInput={handleInput}></input>
             <label>Lozinka:</label>
             <input type="text" required name="password" onInput={handleInput}></input>
-            <button>Register</button>
+            <button>Dodaj agenta</button>
             <br></br>
-            <a href="/registerkorisnik">Zelite da se registrujete kao korisnik?</a>
         </form>
         </div>
     );
