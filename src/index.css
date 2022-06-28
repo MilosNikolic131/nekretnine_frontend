@@ -14,6 +14,14 @@
   border-bottom: 1px solid #f2f2f2;
   background-color: #f2f2f2;
 }
+
+.navbarDivovi {
+  display: contents;
+  align-items: center;
+  max-width: none;
+  margin: 0 auto;
+}
+
 .navbar h1 {
   color: #e67e08;
 }

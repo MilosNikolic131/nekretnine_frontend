@@ -45,24 +45,26 @@ const DodavanjeNekretnine = () => {
         setData(newData);
     }
 
-    var axios = require('axios');
-    var qs = require('qs');
-    var sendData = qs.stringify({
-        'Adresa': data.adresa + '',
-        'cena_po_kvadratu': data.cena_po_kvadratu + '',
-        'tip_nekretnine': data.tip_nekretnine + '',
-        'agent_zaduzen_za_nekretninu': data.agent_zaduzen_za_nekretninu
-    });
-    var config = {
-        method: 'post',
-        url: 'http://127.0.0.1:8000/api/dodajnekretninu',
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': 'Bearer ' + window.sessionStorage.auth_token,
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: sendData
-    };
+    //const [finalData, setFinalData] = useState("");
+
+    // var axios = require('axios');
+    // var qs = require('qs');
+    // var sendData = qs.stringify({
+    //     'Adresa': data.adresa + '',
+    //     'cena_po_kvadratu': data.cena_po_kvadratu + '',
+    //     'tip_nekretnine': data.tip_nekretnine + '',
+    //     'agent_zaduzen_za_nekretninu': data.agent_zaduzen_za_nekretninu + ''
+    // });
+    // var config = {
+    //     method: 'post',
+    //     url: 'http://127.0.0.1:8000/api/dodajnekretninu',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Authorization': 'Bearer ' + window.sessionStorage.auth_token,
+    //         'Content-Type': 'application/x-www-form-urlencoded'
+    //     },
+    //     data: sendData
+    // };
 
     // axios(config)
     //     .then(function (response) {
@@ -76,6 +78,31 @@ const DodavanjeNekretnine = () => {
         console.log(window.sessionStorage.auth_token);
         console.log(data.adresa);
         console.log(data.agent_zaduzen_za_nekretninu);
+
+        var axios = require('axios');
+        var qs = require('qs');
+        var sendData = qs.stringify({
+            'Adresa': data.adresa + '',
+            'cena_po_kvadratu': data.cena_po_kvadratu + '',
+            'tip_nekretnine': data.tip_nekretnine + '',
+            'agent_zaduzen_za_nekretninu': data.agent_zaduzen_za_nekretninu + ''
+        });
+        var config = {
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/dodajnekretninu',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + window.sessionStorage.auth_token,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: sendData
+        };
+        // setFinalData(qs.stringify({
+        //     'Adresa': data.adresa + '',
+        //     'cena_po_kvadratu': data.cena_po_kvadratu + '',
+        //     'tip_nekretnine': data.tip_nekretnine + '',
+        //     'agent_zaduzen_za_nekretninu': data.agent_zaduzen_za_nekretninu + ''
+        // }))
         // axios.post("http://127.0.0.1:8000/api/dodajnekretninu", data).then((res) => {
         //     console.log(res.data);
         //     navigate("/nekretnine");
@@ -85,6 +112,9 @@ const DodavanjeNekretnine = () => {
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
+                Array.from(document.querySelectorAll("input")).forEach(
+                    input => (input.value = "")
+                );
             })
             .catch(function (error) {
                 console.log(error);

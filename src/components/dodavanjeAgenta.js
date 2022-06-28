@@ -17,14 +17,60 @@ const DodavanjeAgenta = () => {
         newData[e.target.name] = e.target.value;
         setData(newData);
     }
+
+    // var axios = require('axios');
+    // var qs = require('qs');
+    // var sendData = qs.stringify({
+    //     'ime_i_prezime': data.ime_i_prezime + '',
+    //     'password': data.password + '',
+    //     'JMBG': data.JMBG + ''
+    // });
+    // var config = {
+    //     method: 'post',
+    //     url: 'http://127.0.0.1:8000/api/dodajagenta',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Authorization': 'Bearer ' + window.sessionStorage.auth_token,
+    //         'Content-Type': 'application/x-www-form-urlencoded'
+    //     },
+    //     data: sendData
+    // };
+
     function handleRegister(e) {
         e.preventDefault();
-        axios.post("http://127.0.0.1:8000/api/register", data).then((res) => {
-            console.log(res.data);
-            navigate("/login");
-        }).catch(e => {
-            console.log(e);
-        })
+        // axios.post("http://127.0.0.1:8000/api/register", data).then((res) => {
+        //     console.log(res.data);
+        //     navigate("/login");
+        // }).catch(e => {
+        //     console.log(e);
+        // })
+        var axios = require('axios');
+    var qs = require('qs');
+    var sendData = qs.stringify({
+        'ime_i_prezime': data.ime_i_prezime + '',
+        'password': data.password + '',
+        'JMBG': data.JMBG + ''
+    });
+    var config = {
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/dodajagenta',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + window.sessionStorage.auth_token,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: sendData
+    };
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+                Array.from(document.querySelectorAll("input")).forEach(
+                    input => (input.value = "")
+                );
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div className="forma-n">

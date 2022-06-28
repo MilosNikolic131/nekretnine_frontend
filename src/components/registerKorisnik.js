@@ -34,7 +34,6 @@ const DodavanjeKorisnika = () => {
             <input type="text" required name="password" onInput={handleInput}></input>
             <button>Register</button>
             <br></br>
-            <a href="/dodavanjeagenta">Zelite da dodate agenta?</a>
         </form>
         </div>
     );

@@ -90,13 +90,26 @@ const Navbar = ({ token }) => {
                 <Link to="/agenti">Agenti</Link>
                 <Link to="/nekretnine" >Nekretnine</Link>
                 <Link to="/zakazivanje">Zakazi obilazak</Link>
+                {(() => {
+                    if (window.sessionStorage.ulogovan == "agent") {
+                        return (
+                            <div className='navbarDivovi'>
+                                <Link to="/dodavanjeagenta" >Dodaj agenta</Link>
+                                <Link to="/dodavanjenekretnina" >Dodaj nekretninu</Link>
+                            </div>
+                        )
+                    }
+                })()}
                 {/* <Link to="/login">Log in</Link>
                 <Link to="/" onClick={handleLogout}>Logout</Link> */}
                 {/* {window.sessionStorage.auth_token == null ? <Link to="/login">Log In</Link> : <Link to="/" onClick={handleLogout2}>Logout</Link>} */}
                 {(() => {
                     if (window.sessionStorage.auth_token == null || window.sessionStorage.auth_token == 'null') {
                         return (
-                            <Link to="/login">Log In</Link>
+                            <div className='navbarDivovi'>
+                                <Link to="/login">Log In</Link>
+                                <Link to="/registerkorisnik" >Register</Link>
+                            </div>
                         )
                     } else {
                         return (
@@ -109,19 +122,10 @@ const Navbar = ({ token }) => {
                 } else{
                     <Link onClick={handleLogout}>Logout</Link>
                 } */}
-                {(() => {
-                    if (window.sessionStorage.ulogovan == "agent") {
-                        return (
-                            <div>
-                                <Link to="/dodavanjeagenta" >Dodaj agenta</Link>
-                                <Link to="/dodavanjenekretnina" >Dodaj nekretninu</Link>
-                            </div>
-                        )
-                    }
-                })()}
+                
                 {/* <Link to="/dodavanjeagenta" >Dodaj agenta</Link>
                 <Link to="/dodavanjenekretnina" >Dodaj nekretninu</Link> */}
-                <Link to="/registerkorisnik" >Register</Link>
+
             </div>
         </nav>
 
