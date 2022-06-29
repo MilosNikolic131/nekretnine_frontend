@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
 
 const Pocetna = () => {
-    const { isLoaded } = useLoadScript({ googleMapsApiKey: "AIzaSyDNuWO4vThK7x66TutYN_rW2Hiz_iI0RXY" });
+    const { isLoaded } = useLoadScript({ googleMapsApiKey: "key" });
 
     if (!isLoaded) {
         return <div>Loading...</div>
