@@ -22,6 +22,24 @@
   margin: 0 auto;
 }
 
+.paragraf {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #050403;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.map-container{
+  width: 50%;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .navbar h1 {
   color: #e67e08;
 }
@@ -111,4 +129,19 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.pocetna {
+  max-width: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+.pocetna label {
+  text-align: left;
+  display: block;
+}
+.pocetna h1 {
+  font-size: 25px;
+  color: #e67e08;
+  margin-bottom: 30px;
 }

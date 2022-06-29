@@ -39,10 +39,14 @@ const Agenti = () => {
             {sliderData.map((slide, index) => {
                 return (< div className={index === current ? 'slide active' : 'slide'
                 } key={index} >
-                    {index === current && <div><img src={slide.image} alt="slika-agent" className="image" />
+                    {index === current && <div>
+                        {/* <img src={slide.image} alt="slika-agent" className="image" /> */}
                         <h2>{slide.ime_i_prezime}</h2>
-                        <p>{slide.JMBG}</p></div>
-
+                        <p>{slide.JMBG}</p>
+                        <p className="paragraf">Nasi agenti znaju koliko je vazno odabrati pravi dom. Oni ce vam pomoci da odaberete savrsenu kucu ili stan za Vas. 
+                            Pogledajte nasu ponudu nekretnina na stranici "Nekretnine" a zatim mozete i zakazati obilazak na stranici "Zakazi obilazak".</p>
+                        </div>
+                        
                     }
                 </div>);
             })}

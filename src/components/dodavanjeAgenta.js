@@ -67,6 +67,7 @@ const DodavanjeAgenta = () => {
                 Array.from(document.querySelectorAll("input")).forEach(
                     input => (input.value = "")
                 );
+                alert("Dodat agent: " + JSON.stringify(response.data));
             })
             .catch(function (error) {
                 console.log(error);

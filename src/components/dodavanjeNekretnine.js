@@ -115,6 +115,7 @@ const DodavanjeNekretnine = () => {
                 Array.from(document.querySelectorAll("input")).forEach(
                     input => (input.value = "")
                 );
+                alert("Dodata nekretnina: " + JSON.stringify(response.data));
             })
             .catch(function (error) {
                 console.log(error);
