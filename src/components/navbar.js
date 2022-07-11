@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { axios } from "axios";
 import { useState } from 'react';
 import { useEffect } from 'react';
+import './navbar.css';
 // const render = null;
 // if (window.sessionStorage.ulogovan == "agent") {
 //     render = <div>
@@ -84,7 +85,7 @@ const Navbar = ({ token }) => {
     return (
 
         <nav className="navbar">
-            <h1>Glavni meni</h1>
+            <Link to="/"><h1>NEKRETNINE MNM</h1></Link>
             <div className="links">
                 <Link to="/">Pocetna</Link>
                 <Link to="/agenti">Agenti</Link>

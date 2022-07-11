@@ -10,6 +10,10 @@ import "@reach/combobox/styles.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./forme.css"
+import noimg from '../components/agent.PNG'
+import { Button } from './Button';
+
 
 const ZakaziObilazak = () => {
     const [agenti, setAgenti] = useState();
@@ -114,13 +118,16 @@ const ZakaziObilazak = () => {
     }
 
     return (
+        <div className="pozadina">
+             <div className='forma-info'>
         <div className="forma-n">
+        <img className='no-img' src={noimg} />
             <h2>Forma za zakazivanje obilaska</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">Izaberite naseg agenta:</label>
 
                 {agenti && <Combobox aria-label="izaberite agenta..." >
-                    <ComboboxInput name="imePrezime" onChange={handleInput} onSelect = {handleInput}/>
+                    <ComboboxInput   className='forma-input' name="imePrezime" onChange={handleInput} onSelect = {handleInput}/>
                     <ComboboxPopover >
                         <ComboboxList>
                             {agenti.map((agent) => (
@@ -131,7 +138,7 @@ const ZakaziObilazak = () => {
                 </Combobox>}
                 <label htmlFor="">Izaberite zeljenu nekretninu:</label>
                 {nekretnine && <Combobox aria-label="izaberite agenta..." >
-                    <ComboboxInput required name="adresa" onChange={handleInput} onSelect = {handleInput} />
+                    <ComboboxInput className='forma-input' required name="adresa" onChange={handleInput} onSelect = {handleInput} />
                     <ComboboxPopover>
                         <ComboboxList>
                             {nekretnine.map((nekretnina) => (
@@ -141,9 +148,13 @@ const ZakaziObilazak = () => {
                     </ComboboxPopover>
                 </Combobox>}
                 <label htmlFor="">Unesite datum:</label>
-                <input type="text" required name="datum" onInput={handleInput}></input>
-                <button>Zakazi</button>
+                <input className='forma-input' type="text" required name="datum" onInput={handleInput}></input>
+                <Button buttonSize='btn--large' buttonStyle='btn--outline' >
+                                Zakazi
+                            </Button>
             </form>
+        </div>
+        </div>
         </div>
     );
 }

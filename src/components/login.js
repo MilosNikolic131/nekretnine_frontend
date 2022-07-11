@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./forme.css"
+import korisnik from '../components/korisnik.jpg'
+import { Button } from './Button';
+
+
 const Login = ({ addToken }) => {
     const [data, setData] = useState({
         email: "",
@@ -28,16 +33,27 @@ const Login = ({ addToken }) => {
         })
     }
     return (
+        <div className="pozadina">
+        <div className='forma-info'>
         <div className="forma-n">
+        <img className='no-img' src={korisnik} />
         <form onSubmit={handleLogin}>
+        <h2>Forma za logovanje korisnika</h2>
             <label>Email:</label>
-            <input type="text" required name="email" onInput={handleInput}></input>
+            <input  className='forma-input' type="text" required name="email" onInput={handleInput}></input>
             <label>Lozinka:</label>
-            <input type="text" required name="password" onInput={handleInput}></input>
-            <button>Login</button>
+            <input className='forma-input' type="text" required name="password" onInput={handleInput}></input>
+            <Button buttonSize='btn--large' buttonStyle='btn--outline' >
+                                Login
+                            </Button>
             <br></br>
+            <br></br>
+            <br></br>
+
             <a href="/loginAgent">Zelite da se ulogujete kao agent?</a>
         </form>
+        </div>
+        </div>
         </div>
     );
 }

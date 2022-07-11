@@ -1,7 +1,7 @@
 
 import Navbar from './components/navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Pocetna from './components/pocetna';
+
 import Login from './components/login';
 import { useState } from "react";
 import Agenti from './components/agenti';
@@ -11,6 +11,7 @@ import DodavanjeNekretnine from './components/dodavanjeNekretnine';
 import DodavanjeAgenta from './components/dodavanjeAgenta';
 import LoginAgent from './components/loginAgent';
 import DodavanjeKorisnika from './components/registerKorisnik';
+import Home from './components/stranice/Home'
 function App() {
   const [token, setToken] = useState();
   function addToken(auth_token) {
@@ -21,7 +22,7 @@ function App() {
       <Navbar token = {token}></Navbar>
       <div className="content">
         <Routes>
-          <Route exact path="/" element={<Pocetna />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/agenti" element={<Agenti />} />
           <Route exact path="/login" element={<Login addToken={addToken} />} />
           <Route exact path="/dodavanjeagenta" element={<DodavanjeAgenta/>} />

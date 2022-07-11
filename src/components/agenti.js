@@ -1,6 +1,9 @@
 import React from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa"
 import { useState, useEffect } from "react";
+import noimg from '../components/no-img.png'
+import './agenti.css';
+
 const Agenti = () => {
     const [current, setCurrent] = useState(0);
     const [sliderData, setSliderData] = useState();
@@ -33,6 +36,7 @@ const Agenti = () => {
         return null;
     }
     return (
+        <div className="pozadinaa">
         <section className="agenti">
             <FaArrowAltCircleLeft className="faarrow-left" onClick={previousSlide}></FaArrowAltCircleLeft>
             <FaArrowAltCircleRight className="faarrow-right" onClick={nextSlide}></FaArrowAltCircleRight>
@@ -41,6 +45,7 @@ const Agenti = () => {
                 } key={index} >
                     {index === current && <div>
                         {/* <img src={slide.image} alt="slika-agent" className="image" /> */}
+                        <img className='no-img' src={noimg} />
                         <h2>{slide.ime_i_prezime}</h2>
                         <p>{slide.JMBG}</p>
                         <p className="paragraf">Nasi agenti znaju koliko je vazno odabrati pravi dom. Oni ce vam pomoci da odaberete savrsenu kucu ili stan za Vas. 
@@ -52,6 +57,7 @@ const Agenti = () => {
             })}
 
         </section >
+        </div>
     );
 }
 

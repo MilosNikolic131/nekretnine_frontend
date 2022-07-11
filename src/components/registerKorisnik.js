@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./forme.css"
+import unk from '../components/unknown.png'
+import { Button } from './Button';
+
 const DodavanjeKorisnika = () => {
     // const [email, setEmail] = useState('');
     // const [korisnickoIme, setkorisnickoIme] = useState('');
@@ -26,15 +30,23 @@ const DodavanjeKorisnika = () => {
         })
     }
     return (
+        <div className="pozadina">
+            <div className='forma-info'>
         <div className="forma-n">
+        <img className='unk' src={unk} />
         <form onSubmit={handleRegister}>
+        <h2>Forma za registraciju</h2>
             <label>Email:</label>
-            <input type="text" required name="email" onInput={handleInput}></input>
+            <input className='forma-input' type="text" required name="email" onInput={handleInput}></input>
             <label>Lozinka:</label>
-            <input type="text" required name="password" onInput={handleInput}></input>
-            <button>Register</button>
-            <br></br>
+            <input className='forma-input' type="text" required name="password" onInput={handleInput}></input>
+            <Button buttonSize='btn--large' buttonStyle='btn--outline' >
+                                Register
+                            </Button>
+            
         </form>
+        </div>
+        </div>
         </div>
     );
 }

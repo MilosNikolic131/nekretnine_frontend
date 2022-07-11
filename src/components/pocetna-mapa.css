@@ -1,0 +1,24 @@
+.pocetna {
+   
+    background: linear-gradient(90deg, rgba(255, 219, 99, 0.747) 0%, rgb(255, 255, 255) 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+  }
+
+  .pocetna > h1 {
+    color: #fff;
+    font-size: 60px;
+    margin-top: -50px;
+  }
+  
+  .pocetna > h2 {
+    color: rgb(245, 196, 107);
+    font-size: 50px;
+    margin-top: -50px;
+  }

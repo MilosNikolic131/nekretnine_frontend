@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./forme.css"
+import noimg from '../components/agent.PNG'
+import { Button } from './Button';
+
+
 const DodavanjeAgenta = () => {
     // const [email, setEmail] = useState('');
     // const [korisnickoIme, setkorisnickoIme] = useState('');
@@ -74,17 +79,25 @@ const DodavanjeAgenta = () => {
             });
     }
     return (
+        <div className="pozadina">
+        <div className='forma-info'>
         <div className="forma-n">
+        <img className='no-img' src={noimg} />
+        <h2>Forma za dodavanje agenta</h2>
         <form onSubmit={handleRegister}>
             <label>Ime i prezime:</label>
-            <input type="text" required name="ime_i_prezime" onInput={handleInput}></input>
+            <input className='forma-input' type="text" required name="ime_i_prezime" onInput={handleInput}></input>
             <label>JMBG:</label>
-            <input type="text" required name="JMBG" onInput={handleInput}></input>
+            <input className='forma-input' type="text" required name="JMBG" onInput={handleInput}></input>
             <label>Lozinka:</label>
-            <input type="text" required name="password" onInput={handleInput}></input>
-            <button>Dodaj agenta</button>
+            <input className='forma-input' type="text" required name="password" onInput={handleInput}></input>
+            <Button buttonSize='btn--large' buttonStyle='btn--outline' >
+                                Dodaj agenta
+                            </Button>
             <br></br>
         </form>
+        </div>
+        </div>
         </div>
     );
 }

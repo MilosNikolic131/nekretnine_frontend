@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./forme.css"
+import noimg from '../components/agent.PNG'
+import { Button } from './Button';
 
 // var axios = require('axios');
 // var qs = require('qs');
@@ -123,18 +126,24 @@ const DodavanjeNekretnine = () => {
     }
 
     return (
+        <div className="pozadina">
+        <div className='forma-info'>
         <div className="forma-n">
+        <img className='no-img' src={noimg} />
+        <h2>Forma za dodavanje nekretnine</h2>
             <form onSubmit={handleKreiraj}>
                 <label>Adresa:</label>
-                <input type="text" required name="adresa" onInput={handleInput}></input>
+                <input className='forma-input' type="text" required name="adresa" onInput={handleInput}></input>
                 <label>Cena po kvadratu:</label>
-                <input type="text" required name="cena_po_kvadratu" onInput={handleInput}></input>
+                <input className='forma-input' type="text" required name="cena_po_kvadratu" onInput={handleInput}></input>
                 <label>Tip nekretnine:</label>
-                <input type="text" required name="tip_nekretnine" onInput={handleInput}></input>
+                <input className='forma-input' type="text" required name="tip_nekretnine" onInput={handleInput}></input>
                 <label>Agent zaduzen za nekretninu:</label>
-                <input type="text" required name="agent_zaduzen_za_nekretninu" onInput={handleInput}></input>
+                <input className='forma-input' type="text" required name="agent_zaduzen_za_nekretninu" onInput={handleInput}></input>
                 <button>Dodaj nekretninu</button>
             </form>
+        </div>
+        </div>
         </div>
     );
 }

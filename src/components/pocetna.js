@@ -1,26 +1,45 @@
 import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
+import './pocetna.css';
 
 const Pocetna = () => {
-    const { isLoaded } = useLoadScript({ googleMapsApiKey: "key" });
+    const { isLoaded } = useLoadScript({ googleMapsApiKey: "AIzaSyDNuWO4vThK7x66TutYN_rW2Hiz_iI0RXY" });
 
     if (!isLoaded) {
         return <div>Loading...</div>
     }
     return (
-        <div className="pocetna">
-            <h1>Dobrodosli na nas sajt</h1>
-            <br></br>
-            <hr></hr>
-            <br></br>
-            <h2>Pogledajte nase agente, odaberite nekretninu i lako zakazite obilazak</h2>
-            <br></br>
-            <p>Ili nas posetite na lokaciji:</p>
-            <br></br>
-            <hr></hr>
-            <br></br>
-            <Map />
+        <div className="hero-container">
+           <h1>DOBRODOŠLI NA NEKRETNINE MNM</h1>
+      <p>Platforma od poverenja</p>
+      <div className='hero-btns'>
+      <Link to='/nekretnine'>
+        <Button
+          className='btns'
+          buttonStyle='btn--primary'
+          buttonSize='btn--large'
+        >
+          NEKRETNINE
+        </Button>
+        </Link>
+        <Link to='/zakazivanje'>
+        <Button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+          onClick={console.log('hey')}
+        >
+          OBLIZAK
+        </Button>
+        </Link>
         </div>
+      
+      </div>
+
+     
+      
     );
     function Map() {
         const center = useMemo(() => ({lat:44.787, lng : 20.457}), []);
