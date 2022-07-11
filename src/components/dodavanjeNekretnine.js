@@ -129,7 +129,7 @@ const DodavanjeNekretnine = () => {
         <div className="pozadina">
         <div className='forma-info'>
         <div className="forma-n">
-        <img className='no-img' src={noimg} />
+       
         <h2>Forma za dodavanje nekretnine</h2>
             <form onSubmit={handleKreiraj}>
                 <label>Adresa:</label>
@@ -140,7 +140,9 @@ const DodavanjeNekretnine = () => {
                 <input className='forma-input' type="text" required name="tip_nekretnine" onInput={handleInput}></input>
                 <label>Agent zaduzen za nekretninu:</label>
                 <input className='forma-input' type="text" required name="agent_zaduzen_za_nekretninu" onInput={handleInput}></input>
-                <button>Dodaj nekretninu</button>
+                <Button buttonSize='btn--large' buttonStyle='btn--outline' >
+                                Dodaj nekretninu
+                            </Button>
             </form>
         </div>
         </div>

@@ -1,0 +1,30 @@
+.wrapper
+ {
+
+    align-items: center;
+    text-align: center;
+    padding:50px;
+    
+}
+
+.wrapper > h1{
+    color: rgb(255, 150, 13);
+    font-size: 85px;
+    text-align: center;
+    padding-bottom: 15px;
+    text-shadow: 0 15px 10px rgba(0,0,0,0.2)
+}
+
+
+.container{
+    border: 3px solid rgb(146, 88, 0);
+    padding: 40px;
+    margin: 20px;
+}
+
+.slika-levo{
+    width: 500px;
+    height: 300px;
+}
+
+

@@ -1,5 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Button } from './Button';
+import "./nekretnine.css"
+import kuca from '../components/kuca.jpg'
 
 const Nekretnine = () => {
     const [error, SetError] = useState();
@@ -51,30 +54,72 @@ const Nekretnine = () => {
 
     }
     return (
-        <div>
+        <div className="wrapper">
+        <h1>NEKRETNINE U PONUDI</h1>
+        
             {dataNekretnine && dataNekretnine.map((nekretnina) => (
-                <div>
-                    <h2>Adresa</h2>
-                    <p>{nekretnina.Adresa}</p>
-                    <h2>Cena po kvadratu</h2>
-                    <p>{nekretnina.cena_po_kvadratu}</p>
-                    <h2>Tip Nekretnine</h2>
-                    <p>{nekretnina.tip_nekretnine.naziv}</p>
-                    <h2>Agent zaduzen za nekretninu</h2>
-                    <p>{nekretnina.Agent.ime_i_prezime}</p>
-                    {(() => {
-                        if (window.sessionStorage.ulogovan == "agent") {
-                            return (
-                                <button onClick={() => handleDelete(nekretnina.id)}>Obrisi</button>
-                            )
-                        }
-                    })()}
-                    <hr></hr>
-                </div>
+            
+            <div className="container">
+
+
+
+           <div className="desno-box">
+           <h2>Adresa</h2>
+           <p>{nekretnina.Adresa}</p>
+           <h2>Cena po kvadratu</h2>
+           <p>{nekretnina.cena_po_kvadratu}</p>
+           <h2>Tip Nekretnine</h2>
+           <p>{nekretnina.tip_nekretnine.naziv}</p>
+           <h2>Agent zaduzen za nekretninu</h2>
+           <p>{nekretnina.Agent.ime_i_prezime}</p>
+           </div>
+
+           <div className="levo-box">
+           <img className='slika-levo' src={kuca} />
+           </div>
+
+           {(() => {
+               if (window.sessionStorage.ulogovan == "agent") {
+                   return (
+                       // <button onClick={() => handleDelete(nekretnina.id)}>Obrisi</button>
+                       <Button buttonSize='btn--large' buttonStyle='btn--primary' onClick={() => handleDelete(nekretnina.id)} >
+                       Obrisi
+                   </Button>
+                   )
+               }
+           })()}
+           
+           </div> 
+           
+           
             ))}
-        </div>
+        
+            </div>
+        
 
     );
 
 }
 export default Nekretnine;
+
+{/* <div>
+<h2>Adresa</h2>
+<p>{nekretnina.Adresa}</p>
+<h2>Cena po kvadratu</h2>
+<p>{nekretnina.cena_po_kvadratu}</p>
+<h2>Tip Nekretnine</h2>
+<p>{nekretnina.tip_nekretnine.naziv}</p>
+<h2>Agent zaduzen za nekretninu</h2>
+<p>{nekretnina.Agent.ime_i_prezime}</p>
+{(() => {
+    if (window.sessionStorage.ulogovan == "agent") {
+        return (
+            // <button onClick={() => handleDelete(nekretnina.id)}>Obrisi</button>
+            <Button buttonSize='btn--large' buttonStyle='btn--primary' onClick={() => handleDelete(nekretnina.id)} >
+            Obrisi
+        </Button>
+        )
+    }
+})()}
+<hr></hr>
+</div> */}
