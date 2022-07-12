@@ -102,24 +102,3 @@ const Nekretnine = () => {
 }
 export default Nekretnine;
 
-{/* <div>
-<h2>Adresa</h2>
-<p>{nekretnina.Adresa}</p>
-<h2>Cena po kvadratu</h2>
-<p>{nekretnina.cena_po_kvadratu}</p>
-<h2>Tip Nekretnine</h2>
-<p>{nekretnina.tip_nekretnine.naziv}</p>
-<h2>Agent zaduzen za nekretninu</h2>
-<p>{nekretnina.Agent.ime_i_prezime}</p>
-{(() => {
-    if (window.sessionStorage.ulogovan == "agent") {
-        return (
-            // <button onClick={() => handleDelete(nekretnina.id)}>Obrisi</button>
-            <Button buttonSize='btn--large' buttonStyle='btn--primary' onClick={() => handleDelete(nekretnina.id)} >
-            Obrisi
-        </Button>
-        )
-    }
-})()}
-<hr></hr>
-</div> */}

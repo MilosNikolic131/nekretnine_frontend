@@ -29,11 +29,7 @@ const ZakaziObilazak = () => {
         newData[e.target.name] = e.target.value;
         setData(newData);
     }
-    // function testTest(e) {
-    //     console.log("bla bla");
-    //     console.log(e.target.name);
-    //     console.log(e.target.value);
-    // }
+    
     let navigate = useNavigate();
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/agent').then(res => {
@@ -63,13 +59,7 @@ const ZakaziObilazak = () => {
     }, []);
     function handleSubmit(e) {
         e.preventDefault();
-        // console.log(data);
-        // axios.post("http://127.0.0.1:8000/api/obilazak", data).then((res) => {
-        //     console.log(res.data);
-        //     navigate("/");
-        // }).catch(e => {
-        //     console.log(e);
-        // })
+       
         var axios = require('axios');
         var qs = require('qs');
         var id_agenta = 0;
