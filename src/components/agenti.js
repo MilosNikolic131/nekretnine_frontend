@@ -44,7 +44,7 @@ const Agenti = () => {
                 return (< div className={index === current ? 'slide active' : 'slide'
                 } key={index} >
                     {index === current && <div>
-                        {/* <img src={slide.image} alt="slika-agent" className="image" /> */}
+                        
                         <img className='no-img' src={noimg} />
                         <h2>{slide.ime_i_prezime}</h2>
                         <p>{slide.JMBG}</p>
